@@ -64,6 +64,25 @@ import org.apache.spark.ui.{ConsoleProgressBar, SparkUI}
 import org.apache.spark.ui.jobs.JobProgressListener
 import org.apache.spark.util._
 
+
+/**
+ * sparkcontext初始化步骤 <深入理解Spark：核心思想与源码分析>
+ * 1）创建sparkenv
+ * 2）创建rdd清理器metadatacleaner
+ * 3）创建初始化sparkui
+ * 4）设置hadoop相关配置及executor环境变量
+ * 5）创建taskscheduler
+ * 6）创建启动dagscheduler
+ * 7）启动taskscheduler
+ * 8）初始化blockmanager
+ * 9）启动metricsystem
+ * 10）创建启动executorallocationmanager
+ * 11）创建启动contextcleaner
+ * 12）spark环境更新
+ * 13）创建dagschedulersource和blockmanagersource
+ * 14）sparkcontext标记为激活
+ *
+ * */
 /**
  * Main entry point for Spark functionality. A SparkContext represents the connection to a Spark
  * cluster, and can be used to create RDDs, accumulators and broadcast variables on that cluster.
